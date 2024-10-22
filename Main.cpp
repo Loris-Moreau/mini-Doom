@@ -1,15 +1,11 @@
-using namespace std;
-
 #include <raylib.h>
-#include <vector>
-#include <iostream>
 
 #include "GameState.h"
 
-#define res 5 // 0=160x120, 1=360x240, 4=640x480
-#define screenWidth 160 * res
-#define screenHeight 120 * res
-#define pixelScale 4/res
+enum{ RES = 5 }; // 0=160x120, 1=360x240, 4=640x480
+#define SCREEN_WIDTH (160 * RES)
+#define SCREEN_HEIGHT (120 * RES)
+#define PIXEL_SCALE (4 / RES)
 
 void DrawGame()
 {
@@ -31,7 +27,7 @@ int main()
     UI ui;
     
     // Init the window
-    InitWindow(screenWidth, screenHeight, "mini Doom");
+    InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "mini Doom");
     SetTargetFPS(GetMonitorRefreshRate(GetCurrentMonitor())); // Set FPS to the refresh rate of the monitor
     
     gameStateInstance.player.InitPlayer();

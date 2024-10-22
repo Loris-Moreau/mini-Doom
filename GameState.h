@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+
 #include "Enemy.h"
 #include "Level.h"
 #include "Player.h"
@@ -21,3 +23,5 @@ public:
     std::vector<Enemy> enemies;
     Level currentLevel;
 };
+
+extern GameState gameStateInstance;

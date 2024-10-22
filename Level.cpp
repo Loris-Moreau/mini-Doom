@@ -5,7 +5,7 @@ void Level::LoadLevel(const char* fileName)
     FILE* file;
     if (fopen_s(&file, fileName, "r") != 0)
     {
-        std::cerr << "Could not load : " << fileName << '\n';
+        std::cerr << "Could not load level : " << fileName << '\n'; 
         return;
     }
 
@@ -17,3 +17,4 @@ void Level::LoadLevel(const char* fileName)
 
     fclose(file);
 }
+ 

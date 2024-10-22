@@ -13,7 +13,7 @@ void Player::UpdatePlayer()
 {
     HandleInput();
     
-    speed = isRunning ? speed * 2 : speed = 2.0;
+    speed = isRunning ? speed = 4.0 : speed = 2.0;
 }
 
 void Player::HandleInput()
