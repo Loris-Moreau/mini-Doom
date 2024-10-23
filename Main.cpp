@@ -14,13 +14,11 @@ void DrawGame()
 
     // Draw enemies
     for (Enemy& enemy : gameStateInstance.enemies)
-        {
-        if (enemy.health > 0)
-        {
-            DrawCircleV(enemy.position, 10, RED);
-        }
+    {
+        DrawCircleV(enemy.position, 10, RED);
     }
 }
+
 
 int main()
 {
@@ -30,13 +28,14 @@ int main()
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "mini Doom");
     SetTargetFPS(GetMonitorRefreshRate(GetCurrentMonitor())); // Set FPS to the refresh rate of the monitor
     
+    gameStateInstance.currentLevel.LoadLevel("level1.txt");
+    
     gameStateInstance.player.InitPlayer();
-    for (Enemy value : gameStateInstance.enemies)
+    for (Enemy& value : gameStateInstance.enemies)
     {
         value.InitEnemies();
     }
-    gameStateInstance.currentLevel.LoadLevel("level1.txt");
-
+    
     
     while (!WindowShouldClose())
     {

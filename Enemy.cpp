@@ -1,14 +1,16 @@
 #include "Enemy.h"
 #include "GameState.h"
 
+GameState gameStateInstance;
+
 void Enemy::InitEnemies()
 {
     Enemy enemy;
-    enemy.position = { 200, 200 };
+    enemy.position = { position.x, position.y };
     enemy.health = 50.0f;
-    enemy.speed = 1.75f;
+    enemy.speed = 0.5f;
     
-    gameStateInstance.enemies.emplace_back(enemy);
+    //gameStateInstance.enemies.emplace_back(enemy);
 }
 
 void Enemy::UpdateEnemies()

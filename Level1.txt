@@ -1,0 +1,24 @@
+# Level 1 Configuration File
+
+# Player Start Position
+player_start_x : 50
+player_start_y : 100
+
+# Enemy Positions (x, y, type)
+enemy :
+  - x: 300, y: 150
+  - x: 450, y: 120
+  - x: 700, y: 130
+
+# Platform Positions (x_start, y_start, x_end, y_end)
+#platforms :
+#  - x_start: 0, y_start: 200, x_end: 400, y_end: 200
+#  - x_start: 450, y_start: 180, x_end: 600, y_end: 180
+
+# Collectible Item Positions (x, y, type)
+#items:
+#  - x: 500, y: 170, type: "health"
+
+# Level End Goal Position
+level_end_x: 800
+level_end_y: 100

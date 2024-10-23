@@ -9,7 +9,7 @@ public:
     void UpdateEnemies();
     //void killEnemy();
     
-    Vector2 position;
-    float health;
-    float speed;
+    Vector2 position = {200, 200};
+    float health = 50.0f;
+    float speed = 0.5f;
 };

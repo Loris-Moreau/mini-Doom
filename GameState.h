@@ -21,6 +21,9 @@ public:
     gameState currentState = MENU;
     Player player;
     std::vector<Enemy> enemies;
+    //std::vector<Platform> platforms;
+    //std::vector<Item> items;
+    float level_end_x, level_end_y;
     Level currentLevel;
 };
 

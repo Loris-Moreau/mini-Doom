@@ -1,8 +1,9 @@
 #include "Player.h"
+#include "GameState.h"
 
 void Player::InitPlayer()
 {
-    position = { 100, 100 };
+    position = {gameStateInstance.player.position.x , gameStateInstance.player.position.y };
     health = 100.0f;
     speed = 2.0f;
     rotation = 0.0f;
@@ -27,8 +28,9 @@ void Player::HandleInput()
 
     speed = isRunning ? 4.0f : 2.0f;  // Speed adjustment
 
-    if (IsKeyDown(KEY_Z)) position.y -= speed;  // Move forward
+    //KEY_Z
+    if (IsKeyDown(KEY_W)) position.y -= speed;  // Move forward
     if (IsKeyDown(KEY_S)) position.y += speed;  // Move backward
-    if (IsKeyDown(KEY_Q)) position.x -= speed;  // Strafe left
+    if (IsKeyDown(KEY_A)) position.x -= speed;  // Strafe left
     if (IsKeyDown(KEY_D)) position.x += speed;  // Strafe right
 }

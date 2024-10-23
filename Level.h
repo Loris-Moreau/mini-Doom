@@ -1,12 +1,15 @@
 #pragma once
 
-#include <vector>
+#include <fstream>
 #include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
 
 class Level
 {
 public:
-    void LoadLevel(const char* fileName);
+    bool LoadLevel(const std::string& levelFilePath);
     
     std::vector<std::string> layout; // Loaded from a text file
 };
