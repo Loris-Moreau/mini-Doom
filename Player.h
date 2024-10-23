@@ -15,4 +15,6 @@ public:
     float speed = 1.0f;
     float rotation = 0.0f;
     bool isRunning = false;
+
+    float mouseSensitivity = 0.1f;
 };

@@ -47,30 +47,22 @@ bool Level::LoadLevel(const std::string& levelFilePath)
                     //gameStateInstance.enemies.push_back(enemy);
                 }
             }
-            // TODO Platforms
-            /*else if (key == "platforms")
+            else if (key == "walls")
             {
-                // Start parsing platform block
-                std::string platformLine;
-                while (std::getline(file, platformLine) && platformLine[0] == '-')
+                std::string wallLine;
+                while (std::getline(file, wallLine) && wallLine[0] == '-')
                 {
-                    Platform platform;
-                    sscanf_s(platformLine.c_str(), "- x_start: %f, y_start: %f, x_end: %f, y_end: %f", &platform.x_start, &platform.y_start, &platform.x_end, &platform.y_end);
-                    platforms.push_back(platform);
+                    Wall wall;
+                    if (sscanf_s(wallLine.c_str(), "- x: %f, y: %f, width: %f, height: %f", &wall.rect.x, &wall.rect.y, &wall.rect.width, &wall.rect.height) == 4)
+                    {
+                        walls.push_back(wall);
+                    }
+                    else 
+                    {
+                        std::cerr << "Error parsing wall data \n";
+                    }
                 }
             }
-            // TODO Pickups
-            else if (key == "items")
-            {
-                // Start parsing items block
-                std::string itemLine;
-                while (std::getline(file, itemLine) && itemLine[0] == '-')
-                {
-                    Item item;
-                    sscanf_s(itemLine.c_str(), "- x: %f, y: %f, type: %s", &item.x, &item.y, &item.type[0]);
-                    items.push_back(item);
-                }
-            }*/
             else if (key == "level_end_x")
             {
                 iss >> gameStateInstance.level_end_x;

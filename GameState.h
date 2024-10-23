@@ -6,6 +6,7 @@
 #include "Level.h"
 #include "Player.h"
 #include "UI.h"
+#include "Wall.h"
 
 enum gameState
 {
@@ -25,6 +26,7 @@ public:
     //std::vector<Item> items;
     float level_end_x, level_end_y;
     Level currentLevel;
+    Camera camera;
 };
 
 extern GameState gameStateInstance;
